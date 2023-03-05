@@ -3,22 +3,22 @@ import time
 import secrets
 from random import randint
 import os
-
-os.system("mode con cols=92 lines=52")
-os.system("title " + f"Wallet Miner || PolisXY || Total mined: 0.00 BTC")
+import keyboard
 
 btcval = 22830.411
 total_btc_mined = {}
 
+os.system("mode con cols=92 lines=52")
+os.system("title " + f"Wallet Miner || PolisXY || Total mined: ")
+for wallet, btc in total_btc_mined.items():
+    os.system(f"{wallet}: {btc:.2f} BTC (${btc * btcval:,.2f})")
+
 while True:
     os.system("cls")
-    print(Fore.YELLOW + "Wallet Miner || PolisXY")
-    print(Fore.WHITE + "Total mined:")
-    for wallet, btc in total_btc_mined.items():
-        print(f"{wallet}: {btc:.2f} BTC (${btc * btcval:,.2f})")
-    print("\n================= MENU =================")
-    print("1. Start mining")
-    print("2. Exit\n")
+    print(Fore.YELLOW + "BTC Wallet Miner || PolisXY\n")
+    print("\n================= OPTIONS =================")
+    print(Fore.WHITE+"["+Fore.BLUE+"1"+Fore.WHITE+"]"" Start BTC wallet mining")
+    print(Fore.WHITE+"["+Fore.RED+"2"+Fore.WHITE+"]"" Exit\n")
     
     choice = input("Enter your choice: ")
     
@@ -46,11 +46,17 @@ while True:
                 answer = None
                 for i in range(10, 0, -1):
                     print(Fore.BLUE + f">> Continue in {i} seconds... (Y/N)", end="\r")
-                    time.sleep(2)
-                    if i == 1:
-                        print("\r", " "*50, end="\r")
-                answer = input("\r> Would you like to continue? (Y/N) [10]: ").strip().lower()
-                if answer == "":
+                    for j in range(20):
+                        if keyboard.is_pressed('y'):
+                            answer = "y"
+                            break
+                        elif keyboard.is_pressed('n'):
+                            answer = "n"
+                            break
+                        time.sleep(0.5)
+                    if answer:
+                        break
+                if not answer:
                     answer = "y"
                     time.sleep(5)
                 
