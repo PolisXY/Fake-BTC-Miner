@@ -5,14 +5,14 @@ from random import randint
 import os
 
 os.system("mode con cols=92 lines=52")
-os.system("title " + f"Wallet Miner || Andrei920#2180 || Total mined: 0.00 BTC")
+os.system("title " + f"Wallet Miner || PolisXY || Total mined: 0.00 BTC")
 
-btcval = 14404.411
+btcval = 22830.411
 total_btc_mined = {}
 
 while True:
     os.system("cls")
-    print(Fore.YELLOW + "Wallet Miner || Andrei920#2180")
+    print(Fore.YELLOW + "Wallet Miner || PolisXY")
     print(Fore.WHITE + "Total mined:")
     for wallet, btc in total_btc_mined.items():
         print(f"{wallet}: {btc:.2f} BTC (${btc * btcval:,.2f})")
@@ -40,7 +40,7 @@ while True:
                 else:
                     total_btc_mined[wallet_address] = randomBTC
                 total_mined_btc = sum(total_btc_mined.values())
-                os.system("title " + f"Wallet Miner || Andrei920#2180 || Total mined: {total_mined_btc:.2f} BTC")
+                os.system("title " + f"Wallet Miner || PolisXY || Total mined: {total_mined_btc:.2f} BTC")
                 print(Fore.WHITE + "> ["+ Fore.GREEN +"+"+ Fore.WHITE +"] " "0x"+ secrets.token_hex(20) + " > " +  Fore.WHITE + str(randomBTC) + Fore.GREEN + " BTC" + Fore.WHITE + "("+ Fore.GREEN +"$" + str("{:,}".format(round(btcval*randomBTC,2))) + Fore.WHITE + ") to " + wallet_address)
 
                 answer = None
