@@ -9,12 +9,11 @@ btcval = 22830.411
 total_btc_mined = {}
 
 os.system("mode con cols=92 lines=52")
-os.system("title " + f"Wallet Miner || PolisXY || Total mined: ")
-for wallet, btc in total_btc_mined.items():
-    os.system(f"{wallet}: {btc:.2f} BTC (${btc * btcval:,.2f})")
+
 
 while True:
     os.system("cls")
+    os.system("title " f"Wallet Miner - PolisXY")
     print(Fore.YELLOW + "BTC Wallet Miner || PolisXY\n")
     print("\n================= OPTIONS =================")
     print(Fore.WHITE+"["+Fore.BLUE+"1"+Fore.WHITE+"]"" Start BTC wallet mining")
