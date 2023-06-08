@@ -18,3 +18,5 @@ Made by PolisXY and made in python
 - If the requirements are yet to be installed, please make sure you installed everything correctly.
 
 - If this is still an issue manually install the requirements.
+
+- If there are still issues, run the .exe file after requirements have been installed.
